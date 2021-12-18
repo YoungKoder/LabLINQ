@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="STUDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="STUDModelStoreContainer">
+          <EntitySet Name="STUDENTS_ONE" EntityType="STUDModel.Store.STUDENTS_ONE" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="STUDENTS_ONE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SURNAME" Type="varchar" MaxLength="30" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" />
+          <Property Name="PATRONIMIC" Type="varchar" MaxLength="30" />
+          <Property Name="GROUP_NUMBER" Type="varchar" MaxLength="6" />
+          <Property Name="ABSENSES" Type="int" />
+          <Property Name="UNREASONABLE_ABSENSES" Type="int" />
+          <Property Name="UNREADY_LABS" Type="int" />
+          <Property Name="UNDONE_LABS" Type="int" />
+          <Property Name="UPDATE_COUNTER" Type="int" />
+          <Property Name="UPDATE_CALCULATED" Type="float" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="STUDModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="STUDEntities">
+          <EntitySet Name="STUDENTS_ONE" EntityType="STUDModel.STUDENTS_ONE" />
+        </EntityContainer>
+        <EntityType Name="STUDENTS_ONE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SURNAME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="NAME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="PATRONIMIC" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_NUMBER" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="ABSENSES" Type="Int32" />
+          <Property Name="UNREASONABLE_ABSENSES" Type="Int32" />
+          <Property Name="UNREADY_LABS" Type="Int32" />
+          <Property Name="UNDONE_LABS" Type="Int32" />
+          <Property Name="UPDATE_COUNTER" Type="Int32" />
+          <Property Name="UPDATE_CALCULATED" Type="Double" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="STUDModelStoreContainer" CdmEntityContainer="STUDEntities">
+          <EntitySetMapping Name="STUDENTS_ONE">
+            <EntityTypeMapping TypeName="IsTypeOf(STUDModel.STUDENTS_ONE)">
+              <MappingFragment StoreEntitySet="STUDENTS_ONE">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PATRONIMIC" ColumnName="PATRONIMIC" />
+                <ScalarProperty Name="GROUP_NUMBER" ColumnName="GROUP_NUMBER" />
+                <ScalarProperty Name="ABSENSES" ColumnName="ABSENSES" />
+                <ScalarProperty Name="UNREASONABLE_ABSENSES" ColumnName="UNREASONABLE_ABSENSES" />
+                <ScalarProperty Name="UNREADY_LABS" ColumnName="UNREADY_LABS" />
+                <ScalarProperty Name="UNDONE_LABS" ColumnName="UNDONE_LABS" />
+                <ScalarProperty Name="UPDATE_COUNTER" ColumnName="UPDATE_COUNTER" />
+                <ScalarProperty Name="UPDATE_CALCULATED" ColumnName="UPDATE_CALCULATED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="StudentModel">
+        <EntityTypeShape EntityType="STUDModel.STUDENTS_ONE" Width="1.5" PointX="0.75" PointY="0.75" Height="2.9522307010491691" IsExpanded="true" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
